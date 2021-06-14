@@ -6,21 +6,22 @@
 
 **STEP 1:** If you have the MATLAB IDE installed into your computer and go to Home tab and click "Add-Ons".
 
-![picture](https://github.com/adit-prawira/sltk-robot-project/tree/main/steps/step1.png?raw=true)
+<img width="1396" alt="step1" src="https://user-images.githubusercontent.com/61646199/121876146-91aa5580-cd4c-11eb-9230-ecfbb588b0da.png">
 
 **STEP 2:** Once you've clicked it, search for "Mobile Robotics Simulation Toolbox" and click "Add" button and wait for it to be installed.
 
-![picture](https://github.com/adit-prawira/sltk-robot-project/tree/main/steps/step2.png?raw=true)
+![step2](https://user-images.githubusercontent.com/61646199/121876176-9838cd00-cd4c-11eb-91d7-34edd9b42c17.png)
 
 **STEP 3**: Open sltk-robot-project with MATLAB and open the "*src*" folder.
 
-![picture](https://github.com/adit-prawira/sltk-robot-project/tree/main/steps/step3.png?raw=true)
+![step3](https://user-images.githubusercontent.com/61646199/121876209-9f5fdb00-cd4c-11eb-81e6-74c53da599d1.png)
 
 **STEP 4**: Open the *main.m* --> go to Editor tab --> click "Run" button.
 
-![picture](https://github.com/adit-prawira/sltk-robot-project/tree/main/steps/step4-option1.png?raw=true)
+![step4-option1](https://user-images.githubusercontent.com/61646199/121876258-aa1a7000-cd4c-11eb-8c8f-e04649a2be41.png)
 
 **OR**: Go to command window, type main, and press Enter
 
-![picture](https://github.com/adit-prawira/sltk-robot-project/tree/main/steps/step4-option2.png?raw=true)
+![step4-option2](https://user-images.githubusercontent.com/61646199/121876296-b30b4180-cd4c-11eb-9ca7-da50340567cc.png)
+
 
