@@ -28,7 +28,7 @@
 
 | Key                 | Description            |
 | ------------------- | ---------------------- |
-| `D`                 |![Uploading Screen Shot 2021-06-14 at 8.41.07 pm.png…]()|
+| `D`                 |<img width="246" alt="Screen Shot 2021-06-14 at 8 41 07 pm" src="https://user-images.githubusercontent.com/61646199/121880834-d4226100-cd51-11eb-89f2-387c9d637ca4.png">                        |
 | `A`                 |<img width="242" alt="Screen Shot 2021-06-14 at 8 41 18 pm" src="https://user-images.githubusercontent.com/61646199/121880549-7b52c880-cd51-11eb-8eb4-f0073358a8e3.png">                        |
 | &#8593; and &#8592; |<img width="229" alt="Screen Shot 2021-06-14 at 8 41 32 pm" src="https://user-images.githubusercontent.com/61646199/121880576-84439a00-cd51-11eb-9655-7f7d4db6564a.png">                        |
 | &#8595; and &#8594; |<img width="233" alt="Screen Shot 2021-06-14 at 8 41 42 pm" src="https://user-images.githubusercontent.com/61646199/121880616-91608900-cd51-11eb-94fb-ce7c2c416a17.png">                        |
