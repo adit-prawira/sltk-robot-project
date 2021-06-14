@@ -1,8 +1,8 @@
 # sltk-robot-project
 
-### IMPORTANT NOTE: To run the simulation you are required to have MATLAB IDE.
+#### IMPORTANT NOTE: To run the simulation you are required to have MATLAB IDE.
 
-#### Follow the following steps after you already owned the MATLAB IDE
+## Setup and Installation for Add-Ons and Simulation
 
 **STEP 1:** If you have the MATLAB IDE installed into your computer and go to Home tab and click "Add-Ons".
 
@@ -24,4 +24,19 @@
 
 ![step4-option2](https://user-images.githubusercontent.com/61646199/121876296-b30b4180-cd4c-11eb-9ca7-da50340567cc.png)
 
+## Simulation Key Bindings
+
+| Key                 | Description            |
+| ------------------- | ---------------------- |
+| &#8593;             |                        |
+| &#8595;             |                        |
+| &#8592;             |                        |
+| &#8594;             |                        |
+| &#8593; and &#8594; |                        |
+| &#8593; and &#8592; |                        |
+| &#8595; and &#8594; |                        |
+| &#8595; and &#8592; |                        |
+| `A`                 |                        |
+| `D`                 |                        |
+| `ESC`               | Exit or end simulation |
 
