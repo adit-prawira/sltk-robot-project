@@ -1,10 +1,9 @@
-function index = danger_range(ranges, safe_range, current_i, direction, detections)
+function index = danger_range(ranges, safe_range, current_i, direction)
     cellRanges = num2cell(ranges);
     [range1, range2, range3, range4, range5, range6, range7, range8, range9] = ...
         cellRanges{:};
     isDanger = is_danger(range1, range2, range3, range4, range5, ...
         range6, range7,  range8, range9, safe_range);
-    
     if(direction == "l")
         mainRange = range(9);
     elseif(direction == "r")
@@ -16,17 +15,19 @@ function index = danger_range(ranges, safe_range, current_i, direction, detectio
     else
         mainRange = range(5);
     end
-    [objName, objRange] = object_detection(detections);
-    fprintf("range = %f, type = %s\n", ...
-            objRange,objName);
+        
     if((~isnan(mainRange) || mainRange < safe_range) &&  ...
-            isDanger || (objName == "FURNITURE" || objName == "LIVING OBJECT")...
-            && objRange < safe_range)
+            isDanger)
         fprintf("STOP!!!!!\n");
         index = current_i;
     else
         index = current_i + 1;
     end
+%     fprintf("range1 = %f, range2 = %f, range3 = %f, "...
+%                     +"range4 = %f, range5 = %f, range6 = %f, "...
+%                     +"range7 = %f, range8 = %f, range9 = %f\n",...
+%                     range1, range2, range3, range4, ...
+%                     range5, range6, range7, range8, range9);
 end
 
 function isDanger = is_danger(range1, range2, range3, range4, range5, ...
@@ -37,23 +38,4 @@ function isDanger = is_danger(range1, range2, range3, range4, range5, ...
         range7 <safe_range || range8 <safe_range || range9 <safe_range;
 end
 
-function [objectName, objectRange] = object_detection(detections)
-    if ~isempty(detections)
-        nearestLabel = detections(1,3);
-        fprintf("range = %f, angle = %f, type = %f\n", ...
-            detections(1),detections(2), detections(3));
-        if(nearestLabel == 1)
-            objectName = "MOLD";
-            objectRange = 0;
-        elseif(nearestLabel == 2)
-            objectName = "FURNITURE";
-            objectRange = detections(1);
-        else
-            objectName = "LIVING OBJECT";
-            objectRange = detections(1);
-        end
-    else
-        objectName = "";
-        objectRange = 0;
-    end
-end
+fuct

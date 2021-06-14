@@ -87,7 +87,8 @@ attachObjectDetector(viz, detector);
 
 viz.objectColors = [1 0 0;0 1 0;0 0 1];
 viz.objectMarkers = 'so^';
-
+objectName = "";
+objectRange = 0;
 %% Simulation parameters
 sampleTime = 0.1;              % Sample time [s]
 angle_d = 90;
@@ -139,6 +140,7 @@ while start
             elseif(val == FORWARD)
                 ref = move_forward(robot, tVec, motor_speed);
                 i =danger_range(ranges, SAFE_RANGE, i, "f", detections);
+                disp(['Nearest object: ' objectName]);
             elseif(val == BACKWARD)
                 ref = move_backward(robot, tVec, motor_speed);
                 i = danger_range(ranges, SAFE_RANGE, i, "b", detections);
@@ -172,16 +174,16 @@ while start
             if(key1 < key2)
                 if(key1 == LEFT && key2 == FORWARD)
                     ref = move_forward_left(robot, tVec, motor_speed);
-                    i = danger_range(ranges, SAFE_RANGE, i, "fl", detections);
+                    i = danger_range(ranges, SAFE_RANGE, i, "fl");
                 elseif(key1 == RIGHT && key2 == FORWARD)
                     ref = move_forward_right(robot, tVec, motor_speed);
-                    i = danger_range(ranges, SAFE_RANGE, i, "fr", detections);
+                    i = danger_range(ranges, SAFE_RANGE, i, "fr");
                 elseif(key1 == RIGHT && key2 == BACKWARD)
                     ref = move_backward_right(robot, tVec, motor_speed);
-                    i = danger_range(ranges, SAFE_RANGE, i, "br", detections);
+                    i = danger_range(ranges, SAFE_RANGE, i, "br");
                 elseif(key1 == LEFT && key2 == BACKWARD)
                     ref = move_backward_left(robot, tVec, motor_speed);
-                    i = danger_range(ranges, SAFE_RANGE, i, "bl", detections);
+                    i = danger_range(ranges, SAFE_RANGE, i, "bl");
                 end 
             end
         end
