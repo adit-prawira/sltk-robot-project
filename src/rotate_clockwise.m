@@ -12,7 +12,6 @@ function ref = rotate_clockwise(robot, tVec, motor_speed)
     vx = round(vx,2);
     vy = round(vy,2);
     w = round(w,2);
-    fprintf("omega = %d\n", w);
 
     % Initialize time, input, and pose arrays
     vxRef = vx*ones(size(tVec));   % Reference x speed

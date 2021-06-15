@@ -1,14 +1,15 @@
 %% STALKER ROBOT SIMULATIONS
 clear
 clc
-set(0,'DefaultFigureWindowStyle','docked') 
+set(0,'DefaultFigureWindowStyle','docked') % Docked simulation.
 
-%% KEY BINDING CONSTANTS
+%% KEY BINDING ASCII CODE CONSTANTS
 FORWARD = 82;
 BACKWARD = 81; 
 LEFT = 80;
 RIGHT = 79;
 ESC = 41;
+ENTER = 13;
 KEY_D = 7; % d key
 KEY_A = 4; % a key
  
@@ -18,11 +19,16 @@ fprintf("\nDo you want to start the simulation?\nPress 'Enter' to "+...
 val = getkey;
 start = 0;
 
-if(val == 13)
+
+if(val == ENTER)
     start = 1;
     val = 0;
+    
+    % Options that allows user to choose map of the environment
     map = input("Enter a number to choose simulation's map:\n"+...
         "1 - Simple map\n2 - Complex map\n");
+    
+    % load simple map model if use pressed number 1, complex map otherwise.
     if(map == 1)
         load('simpleMap.mat');
         world = load('simpleMap.mat');
@@ -35,7 +41,6 @@ if(val == 13)
         objects = [molds; ...
            furnitures; ...
            8, 4, 3];
-       
     else
         load('complexMap.mat');
         world = load('complexMap.mat');
@@ -54,7 +59,6 @@ if(val == 13)
         objects = [molds; ...
            furnitures; ...
            8, 4, 3];
-        
     end
     fprintf("\nStatus: Simulation has started...\n");
 else
@@ -75,31 +79,35 @@ detector.fieldOfView = pi/4;
 R = 0.05;
 Lx = 0.35393; % Wheel base = 353.93 mm
 Ly = 0.3354; % Wheel track = 401.4 mm
-robot = FourWheelMecanum(R, Lx, Ly); % our robot body
+robot = FourWheelMecanum(R, Lx, Ly); % Declare robot body motion mechanism.
 
-%% Create visualizer
+%% Create 2D visualizer
 viz = Visualizer2D;
 viz.mapName = 'map';
 viz.showTrajectory = false;
 
+%% Attaching Lidar and Object Detectino Sensor.
 attachLidarSensor(viz,lidar);
 attachObjectDetector(viz, detector);
 
+%% Generate 3 object with color of Red, Blue, and Green.
 viz.objectColors = [1 0 0;0 1 0;0 0 1];
 viz.objectMarkers = 'so^';
 
 %% Simulation parameters
 sampleTime = 0.1;              % Sample time [s]
-angle_d = 90;
-angle_r = angle_d * pi/180;
-MAX_TIME = 999;
+MAX_TIME = 9999;
+
+%% Set initial position of the robot.
 x0 = 2;
 y0 = 1;
-motor_speed = 18.8496;
-SAFE_RANGE = 0.5;
-initpost = [x0; y0; angle_r];        % Initial post (x y theta)
+angle_d = 90;
+angle_r = angle_d * pi/180; % Setting the robot to initially faced forward 
+initpost = [x0; y0; angle_r];% Initial post (x y theta) to column matrix.
+%% Set speed of motor
+motor_speed = 18.8496; % rad/s
+SAFE_RANGE = 0.5; % threshold range between robot with wall or an object
 tVec = 0:sampleTime:double(MAX_TIME);         % Time array/vector
-
 %% Initilize Robot's reference movement
 ref = move_forward(robot, tVec, motor_speed);       
 post = zeros(3,numel(tVec));    % postion matrix
@@ -117,7 +125,7 @@ while start
     % Perform forward discrete integration step
     post(:,i) = post(:,i-1) + vel*sampleTime;
     
-    % Perfoorm object detection
+    % Perform object detection
     detections = detector(post(:,i),objects);
     
     % Update lidar and visualization
@@ -127,13 +135,17 @@ while start
 
     waitfor(r);
     
+    % Updating status of whether or not one or more keyard key are pressed.
     [keyIsDown, secs, keyCode, deltaSecs] = KbCheck(-1);
     
     if(keyIsDown)
         val = find(keyCode==1);
-
+        
+        % One key command.
         if(length(val) == 1)
+           
             if(val == ESC)
+                % End simulation when user pressed ESC key.
                 start = 0;
                 fprintf("\nStatus: Simulation has ended\n");
             elseif(val == FORWARD)
@@ -165,7 +177,7 @@ while start
             end
         end
         
-        % DIAGONAL MOVEMENTS
+        % DIAGONAL MOVEMENTS, hence 2-key command.
         if(length(val) == 2)
             key1 = val(1);
             key2 = val(2);
