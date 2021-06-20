@@ -1,3 +1,4 @@
+% Author: Aditya Prawira
 %% STALKER ROBOT SIMULATIONS
 clear
 clc

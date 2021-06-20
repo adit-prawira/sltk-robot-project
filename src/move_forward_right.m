@@ -1,3 +1,6 @@
+% Author: Aditya Prawira
+
+% forward-right movement function which updates robot velocity reference vector
 function ref = move_forward_right(robot, tVec, motor_speed)
     w1 = motor_speed; % angular velocity of motor 1
     w2 = 0; % angular velocity of motor 2

@@ -1,4 +1,6 @@
+% Author: Aditya Prawira
 
+% clockwise rotation movement function which updates robot velocity reference vector
 function ref = rotate_clockwise(robot, tVec, motor_speed)
     w1 = motor_speed; % angular velocity of motor 1
     w2 = -motor_speed; % angular velocity of motor 2

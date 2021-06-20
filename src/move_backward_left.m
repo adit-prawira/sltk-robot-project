@@ -1,3 +1,6 @@
+% Author: Aditya Prawira
+
+% backward-left movement function which updates robot velocity reference vector
 function ref = move_backward_left(robot, tVec, motor_speed)
     w1 = -motor_speed; % angular velocity of motor 1
     w2 = 0; % angular velocity of motor 2

@@ -1,9 +1,12 @@
+% Author: Aditya Prawira
+% Helper function that will generate 10 molds on walls and will placed
+% molds randomly in the x and y axis.
 function molds = mold_generator(world)
     molds = [];
     type = ["x" "y"];
     map = world.map;
     
-    for i = 1: 10
+    for i = 1:10
         indexType = randperm(2, 1);
         if(type(indexType) == "x")
             index = randperm(length(map.XWorldLimits),1);
