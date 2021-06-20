@@ -1,6 +1,5 @@
 % Author: Aditya Prawira
-% Helper function that will generate 10 molds on walls and will placed
-% molds randomly in the x and y axis.
+% Helper function that will generate molds on wall randomly in the x and y axis.
 function molds = mold_generator(world)
     molds = [];
     type = ["x" "y"];
