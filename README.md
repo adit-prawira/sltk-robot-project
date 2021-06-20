@@ -8,9 +8,12 @@
 
 <img width="1396" alt="step1" src="https://user-images.githubusercontent.com/61646199/121876146-91aa5580-cd4c-11eb-9230-ecfbb588b0da.png">
 
-**STEP 2:** Once you've clicked it, search for "Mobile Robotics Simulation Toolbox" and click "Add" button and wait for it to be installed.
+**STEP 2:** Once you've clicked it, search for "Mobile Robotics Simulation Toolbox", "getkey", and "Psychtoolbox-3" and click "Add" button on each add-on page wait for it to be installed. When installed, "Add" button will become "Open Folder" and "Manage" buttons.
 
 ![step2](https://user-images.githubusercontent.com/61646199/121876176-9838cd00-cd4c-11eb-91d7-34edd9b42c17.png)
+![Screen Shot 2021-06-20 at 4 07 04 pm](https://user-images.githubusercontent.com/61646199/122664018-0ca6bc80-d1e2-11eb-9601-26993e0de2a1.png)
+![Screen Shot 2021-06-20 at 4 08 15 pm](https://user-images.githubusercontent.com/61646199/122664023-12040700-d1e2-11eb-92fd-fcc16fccb2b8.png)
+
 
 **STEP 3**: Open sltk-robot-project with MATLAB and open the "*src*" folder.
 
